@@ -31,5 +31,5 @@ app.listen(PORT,(req,res)=>{
 })
 
 app.use("/",(req,res)=>{
-    res.send("<h1> welcome to suby <h1/>")
+    res.send("<h1> welcome to suby backend <h1/>")
 }) 
