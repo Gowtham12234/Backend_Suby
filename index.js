@@ -8,7 +8,7 @@ const ProductRoutes=require("./routes/ProductRoutes");
 const app=express();
 const path=require("path")
 
-const port=4500;
+const PORT=process.env.PORT||4500 ;
 
 dotenv.config();
 
@@ -26,10 +26,10 @@ app.use("/product",ProductRoutes)
 app.use("/uploads",express.static('uploads'));
 
 
-app.listen(port,(req,res)=>{
+app.listen(PORT,(req,res)=>{
     console.log(`server running in ${port}`);
 })
 
-app.use("/home",(req,res)=>{
+app.use("/",(req,res)=>{
     res.send("<h1> welcome to suby <h1/>")
 }) 
