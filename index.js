@@ -27,7 +27,7 @@ app.use("/uploads",express.static('uploads'));
 
 
 app.listen(PORT,(req,res)=>{
-    console.log(`server running in ${port}`);
+    console.log(`server running in ${PORT}`);
 })
 
 app.use("/",(req,res)=>{
