@@ -5,9 +5,10 @@ const bodyparser=require("body-parser")
 const venodorRoutes=require("./routes/vendorRoutes")
 const firmroutes=require("./routes/FirmRoutes")
 const ProductRoutes=require("./routes/ProductRoutes");
-const app=express();
 const path=require("path")
-
+const cors=require("cors")
+const app=express();
+app.use(cors())
 const PORT=process.env.PORT||4500 ;
 
 dotenv.config();
