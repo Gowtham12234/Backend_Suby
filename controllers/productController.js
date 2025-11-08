@@ -54,7 +54,7 @@ const getProductByFirm=async(req,res)=>{
         const firmId=req.params.firmId;
         const firm=await Firm.findById(firmId)
         if(!firm){
-            return res.status(404).json("vendor not found")
+            return res.status(404).json({message:"vendor not found"})
         }
         const restaurantName=firm.firmname;
         const products=await Product.find({firm:firmId})
@@ -73,6 +73,7 @@ const deleteProductById=async(req ,res)=>{
         if(!deletedProduct){
             return res.status(404).json({error:"no product found"})
         }
+        res.status(200).json({ message: "Product deleted successfully" })
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: "Internal server error" })
